@@ -29,6 +29,7 @@ AddEventHandler('loffe_burglary:setDoorFreezeStatus', function(house, status)
     else
         Config.Burglary[house].Door.Frozen = status
         Config.Burglary[house].Door.Health = 1000
+        TriggerClientEvent('loffe_burglary:setHealth', -1, house, Config.Burglary[house].Door.Health)
     end
     TriggerClientEvent('loffe_burglary:setFrozen', -1, house, Config.Burglary[house].Door.Frozen)
 end)
