@@ -125,8 +125,7 @@ Citizen.CreateThread(function()
                     if GetSelectedPedWeapon(player) == GetHashKey("WEAPON_CROWBAR") then
                         TriggerServerEvent('loffe_burglary:setDoorHealth', i, GetEntityHealth(door))
                         if GetEntityHealth(door) <= 0.0 then
-                            TriggerServerEvent('qalle:jobS', 'police', 'Ett inbrott har skett vid koordinaterna: ', {x = d.Coords.x, y = d.Coords.y, z = d.Coords.z}, math.random(200, 1000))
-                            TriggerServerEvent('gcPhone:sendMessage2', 'police', 'Ett inbrott har skett')
+			TriggerServerEvent('esx_phone:send', 'police', 'Inbrott', true, {x = d.Coords.x, y = d.Coords.y, z = d.Coords.z}, true)
                             if v.Type == 'ghetto' then
                                 for j = 1, #v.Peds do
                                     print(j)
